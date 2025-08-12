@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Storyworth{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--
+      Mockup uses GT Super font, which is not freely available.
+      TODO: find suitable alternative
+    -->
+  </head>
+  <body
+    class="flex min-h-screen items-center justify-center bg-gray-50 font-serif"
+  >
+    {% block body %}{% endblock %}
+  </body>
+</html>
