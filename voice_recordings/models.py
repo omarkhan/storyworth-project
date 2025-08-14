@@ -11,12 +11,13 @@ class Recording(models.Model):
         FAILED = "FAILED"
 
     created_at = models.DateTimeField(auto_now_add=True)
-    phone_number = models.CharField()
-    twilio_call_sid = models.CharField(blank=True)
-    twilio_recording_sid = models.CharField(blank=True)
+    phone_number = models.CharField(max_length=100)
+    twilio_call_sid = models.CharField(blank=True, max_length=100)
+    twilio_recording_sid = models.CharField(blank=True, max_length=100)
     status = models.CharField(
         choices=Status,
         default=Status.IN_PROGRESS,
+        max_length=100,
     )
 
     @property
