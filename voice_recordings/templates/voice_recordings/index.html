@@ -1,26 +1,16 @@
 <!-- prettier-ignore -->
-{% extends "voice_recordings/base.html" %}
-{% load static %}
+{% extends "voice_recordings/layout.html" %}
 {% block title %}Storyworth: Record Your Story{% endblock %}
 
-{% block body %}
-<div class="w-full max-w-2xl rounded-lg bg-white px-14 py-10 shadow-lg">
-  <!-- Icon -->
-  <img
-    src="{% static 'voice_recordings/logo.png' %}"
-    class="m-auto mb-2 block max-w-32"
-  />
-
-  <!-- Heading -->
-  <h1 class="text-3xl leading-snug">
-    Record your voice over the phone and we’ll transcribe your story.
-  </h1>
+{% block recorder %}
+<form method="post">
+  {% csrf_token %}
 
   <!-- Input -->
   <div class="mt-8">
     <label for="phone" class="mb-2 block text-sm">Your phone number</label>
     <input
-      id="phone"
+      name="tel"
       type="tel"
       placeholder="123-456-7890"
       class="rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder-gray-400 focus:border-[#07939d] focus:outline-none focus:ring-2 focus:ring-[#07939d]"
@@ -33,34 +23,5 @@
   >
     Call me now
   </button>
-
-  <!-- Divider -->
-  <hr class="my-7" />
-
-  <!-- How it works -->
-  <h2 class="mb-5 font-sans text-xs uppercase tracking-wider">How it works</h2>
-
-  <ol class="leading-relaxed">
-    <li class="flex items-start">
-      <span class="mr-3 text-2xl/5">01</span>
-      <span
-        >Enter your phone number and Storyworth will call you to record your
-        story.</span
-      >
-    </li>
-    <hr class="my-5" />
-    <li class="flex items-start">
-      <span class="mr-3 text-2xl/5">02</span>
-      <span>During the call we’ll record your story over the phone.</span>
-    </li>
-    <hr class="my-5" />
-    <li class="flex items-start">
-      <span class="mr-3 text-2xl/5">03</span>
-      <span
-        >After the call, an audio clip of your recording will be uploaded to
-        your story where you can then request it to be transcribed.</span
-      >
-    </li>
-  </ol>
-</div>
+</form>
 {% endblock %}

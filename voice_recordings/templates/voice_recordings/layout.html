@@ -1,0 +1,49 @@
+<!-- prettier-ignore -->
+{% extends "voice_recordings/base.html" %}
+{% load static %}
+
+{% block body %}
+<div class="w-full max-w-2xl rounded-lg bg-white px-14 py-10 shadow-lg">
+  <!-- Icon -->
+  <img
+    src="{% static 'voice_recordings/logo.png' %}"
+    class="m-auto mb-2 block max-w-32"
+  />
+
+  <!-- Heading -->
+  <h1 class="text-3xl leading-snug">
+    Record your voice over the phone and we’ll transcribe your story.
+  </h1>
+
+  {% block recorder %}{% endblock %}
+
+  <!-- Divider -->
+  <hr class="my-7" />
+
+  <!-- How it works -->
+  <h2 class="mb-5 font-sans text-xs uppercase tracking-wider">How it works</h2>
+
+  <ol class="leading-relaxed">
+    <li class="flex items-start">
+      <span class="mr-3 text-2xl/5">01</span>
+      <span
+        >Enter your phone number and Storyworth will call you to record your
+        story.</span
+      >
+    </li>
+    <hr class="my-5" />
+    <li class="flex items-start">
+      <span class="mr-3 text-2xl/5">02</span>
+      <span>During the call we’ll record your story over the phone.</span>
+    </li>
+    <hr class="my-5" />
+    <li class="flex items-start">
+      <span class="mr-3 text-2xl/5">03</span>
+      <span
+        >After the call, an audio clip of your recording will be uploaded to
+        your story where you can then request it to be transcribed.</span
+      >
+    </li>
+  </ol>
+</div>
+{% endblock %}

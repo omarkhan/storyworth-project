@@ -9,9 +9,12 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "django>=5.2.5",
+    "python-dotenv>=1.1.1",
+    "twilio>=9.7.0",
 ]
 
 [dependency-groups]
 dev = [
+    "ipython>=9.4.0",
     "ruff>=0.12.8",
 ]
