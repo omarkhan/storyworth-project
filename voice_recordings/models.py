@@ -24,4 +24,4 @@ class Recording(models.Model):
         if self.status != self.Status.COMPLETE:
             return None
 
-        return f"https://api.twilio.com/2010-04-01/Accounts/{settings.TWILIO_ACCOUNT_SID}/Recordings/{self.twilio_recording_sid}"
+        return f"https://api.twilio.com/2010-04-01/Accounts/{settings.TWILIO_ACCOUNT_SID}/Recordings/{self.twilio_recording_sid}.mp3"
