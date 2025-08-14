@@ -9,7 +9,11 @@ from dotenv import load_dotenv
 
 def main():
     """Run administrative tasks."""
-    load_dotenv()
+
+    # Load environment variables from .env files:
+    load_dotenv(".env")
+    load_dotenv(".env.local", override=True)
+
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "storyworth.settings")
     try:
         from django.core.management import execute_from_command_line
