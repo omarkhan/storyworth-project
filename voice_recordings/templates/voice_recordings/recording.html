@@ -70,3 +70,24 @@ Recording failed
   {% endif %}
 </div>
 {% endblock %}
+
+<!-- prettier-ignore -->
+{% block js %}
+{% if recording.status == "IN_PROGRESS" %}
+<script>
+  // Poll for updates until the recording is complete, then refresh the page.
+  // TODO: Implement using server-sent events or websockets.
+  async function waitUntilComplete() {
+    const response = await fetch("{% url 'recording_status' recording.pk %}");
+    const status = await response.text();
+    if (status === "COMPLETE") {
+      location.reload();
+    } else {
+      setTimeout(waitUntilComplete, 2000);
+    }
+  }
+  setTimeout(waitUntilComplete, 10000);
+</script>
+<!-- prettier-ignore -->
+{% endif %}
+{% endblock %}

@@ -16,4 +16,9 @@ urlpatterns = [
         views.recording_status_updated_webhook,
         name="recording_status_updated_webhook",
     ),
+    path(
+        "recording/<int:recording_id>/status/",
+        views.recording_status,
+        name="recording_status",
+    ),
 ]

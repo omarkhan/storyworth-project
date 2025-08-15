@@ -82,6 +82,12 @@ def recording_status_updated_webhook(request, recording_id: int):
     return HttpResponse(status=200)
 
 
+@require_GET
+def recording_status(request, recording_id: int):
+    recording = Recording.objects.get(pk=recording_id)
+    return HttpResponse(recording.status, content_type="text/plain")
+
+
 def _place_call(tel: str, webhook_url: str) -> str:
     twilio_client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
     call = twilio_client.calls.create(
