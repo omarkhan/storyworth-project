@@ -22,6 +22,7 @@ dev = [
     "ipython>=9.4.0",
     "pytest-django>=4.11.1",
     "pytest-dotenv>=0.5.2",
+    "pytest-playwright>=0.7.0",
     "ruff>=0.12.8",
 ]
 
