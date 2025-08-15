@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", views.form, name="form"),
     # TODO: obfuscate recording IDs
     path("recording/<int:recording_id>/", views.recording, name="recording"),
     path(

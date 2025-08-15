@@ -12,7 +12,7 @@ from .models import Recording
 
 
 @require_http_methods(["GET", "POST"])
-def index(request):
+def form(request):
     if request.method == "POST":
         # TODO: validate phone number
         tel = request.POST["tel"]
@@ -28,7 +28,7 @@ def index(request):
 
         return redirect("recording", recording.pk)
 
-    return render(request, "voice_recordings/index.html")
+    return render(request, "voice_recordings/form.html")
 
 
 @require_GET
