@@ -86,7 +86,8 @@ def recording_status_updated_webhook(request, recording_id: int):
         recording.status = Recording.Status.COMPLETE
         recording.twilio_recording_sid = params["RecordingSid"]
         recording.save()
-        # TODO: broadcast to UI
+
+    # TODO: handle other statuses (failed, etc.)
 
     return HttpResponse(status=200)
 

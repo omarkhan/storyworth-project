@@ -1,6 +1,12 @@
+import os
+
 import pytest
 from django.core.management import call_command
 from django.test import override_settings
+
+# Needed for Playwright test to run locally.
+# TODO: Figure out why we need this and if we can remove it.
+os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
 
 @pytest.fixture(scope="session", autouse=True)
