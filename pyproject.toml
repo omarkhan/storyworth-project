@@ -20,5 +20,11 @@ dependencies = [
 [dependency-groups]
 dev = [
     "ipython>=9.4.0",
+    "pytest-django>=4.11.1",
+    "pytest-dotenv>=0.5.2",
     "ruff>=0.12.8",
 ]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "storyworth.settings"
+env_files = [".env.test"]
